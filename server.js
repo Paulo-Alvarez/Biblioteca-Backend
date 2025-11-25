@@ -6,21 +6,21 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Configuração de CORS: Permite apenas domínios específicos.
-// 🚨 ATENÇÃO: SUBSTITUA PELA URL REAL DO SEU VERCEL APÓS O DEPLOY.
+// CORREÇÃO: Usando a URL real do Vercel (URL do Front-end)
 const allowedOrigins = [
-    'http://localhost:5500', // Para testes locais
-    'https://<SEU-DOMINIO-VERCEL>.vercel.app' // << PLACEHOLDER VERCEL AQUI
+    'http://localhost:5500', // Para testes locais
+    'https://biblioteca-frontend-1tklwx6xz-paulos-projects-66c89578.vercel.app' // << URL CORRETA
 ];
 
 const corsOptions = {
-  origin: (origin, callback) => {
-    // Permite requisições sem 'origin' (como apps ou ferramentas como Postman) ou de origens permitidas
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
+  origin: (origin, callback) => {
+    // Permite requisições sem 'origin' (como apps ou ferramentas como Postman) ou de origens permitidas
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
 };
 
 // Aplica a configuração de CORS
@@ -33,6 +33,6 @@ app.use(express.json());
 app.use('/api/livros', livroRoutes);
 
 app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
-    // Este log aparecerá no console do Render
+    console.log(`Servidor rodando na porta ${PORT}`);
+    // Este log aparecerá no console do Render
 });
