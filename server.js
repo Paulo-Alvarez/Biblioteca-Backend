@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 // CORREÇÃO: Usando a URL real do Vercel (URL do Front-end)
 const allowedOrigins = [
     'http://localhost:5500', // Para testes locais
-    'https://biblioteca-frontend-1tklwx6xz-paulos-projects-66c89578.vercel.app' // << URL CORRETA
+    'https://biblioteca-frontend-2-4f9r92jmx-paulos-projects-66c89578.vercel.app' // << URL CORRETA
 ];
 
 const corsOptions = {
